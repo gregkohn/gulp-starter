@@ -1,14 +1,70 @@
+// Font-smoothing
+=font-smoothing
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+//////
+
+
+
 // Based on http://codepen.io/javasteve99/pen/hDxpn
 =font-face($font-family, $file-path, $font-weight: normal, $font-style: normal)
-  @font-face
-    font-family: $font-family
-    src: url('#{$file-path}.eot')
-    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg')
-    font-weight: $font-weight
-    font-style: $font-style
-
-  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
-  @media screen and (-webkit-min-device-pixel-ratio: 0)
     @font-face
       font-family: $font-family
-      src: url('#{$file-path}.svg##{$font-family}') format('svg')
+      src: url('#{$file-path}.eot')
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg')
+      font-weight: $font-weight
+      font-style: $font-style
+
+    // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+    @media screen and (-webkit-min-device-pixel-ratio: 0)
+      @font-face
+        font-family: $font-family
+        src: url('#{$file-path}.svg##{$font-family}') format('svg')
+//////
+
+
+
+// Size() from Bourbon
+=size($value)
+  $width: nth($value, 1)
+  $height: $width
+
+  @if length($value) > 1
+    $height: nth($value, 2)
+
+  @if is-size($height)
+    height: $height
+  @else
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
+
+  @if is-size($width)
+    width: $width
+  @else
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."
+//////
+
+
+// Clearfix from Bourbon
+=clearfix
+  &::after
+    clear: both
+    content: ""
+    display: table
+//////
+
+
+
+// Quick and dirty links (minimal options)
+=links($color, $decoration, $hover:"")
+  @if ($hover == "")
+    a:link, a:visited, a:hover, a:active
+      color: $color
+      text-decoration: $decoration
+  @else
+    a:link, a:visited, a:active
+      color: $color
+      text-decoration: $decoration
+    a:hover
+      color: $hover
+      text-decoration: $decoration
+//////
