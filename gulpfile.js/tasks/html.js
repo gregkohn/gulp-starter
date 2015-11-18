@@ -1,10 +1,11 @@
 var config       = require('../config')
 if(!config.tasks.html) return
 
-var browserSync  = require('browser-sync')
-var gulp         = require('gulp')
-var path         = require('path')
-var jade         = require('gulp-jade')
+var browserSync = require('browser-sync')
+var gulp        = require('gulp')
+var path        = require('path')
+var fs          = require('fs')
+var jade        = require('gulp-jade')
 
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
@@ -16,7 +17,8 @@ var paths = {
 var htmlTask = function() {
   return gulp.src(paths.src)
     .pipe(jade({
-      pretty: process.env.NODE_ENV !== 'production'
+      pretty: process.env.NODE_ENV !== 'production',
+      data: JSON.parse( fs.readFileSync('src/html/data/global.json', { encoding: 'utf8' }) )
     }))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())

@@ -1,0 +1,12 @@
+extends layouts/base
+include macros/helpers
+
+block content
+  img(src="#{projectPath}/images/gulp.png" width="50px" alt="gulp.js")
+
+  div
+    a(href="page.html") Second page
+    +sprite("viget")
+
+  div
+    include shared/data-example.jade

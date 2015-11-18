@@ -1,0 +1,52 @@
+- var projectPath = "http://localhost:3000";
+
+doctype html
+//if lt IE 7
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+//if IE 7
+  <html class="no-js lt-ie9 lt-ie8">
+//if IE 8
+  <html class="no-js lt-ie9">
+
+html(class="no-js", lang="en")
+
+  head
+
+    //Basic page needs
+    meta(charset="utf-8")
+    block pagetitle
+      title
+    meta(name="description", content="")
+    meta(name="author", content="")
+
+    //Mobile Specific Metas
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    //CSS
+    link(rel="stylesheet" href="stylesheets/global.css")
+    block css
+
+    // Facebook Stuff
+    meta(property="og:title", content="")
+    meta(property="og:url", content="")
+    meta(property="og:image", content="")
+    meta(property="og:site_name", content="")
+    meta(property="og:description", content="")
+    meta(property="fb:app_id", content="")
+
+    //Twitter Stuff
+    meta(name="twitter:card", content="summary")
+    meta(name="twitter:creator", content="")
+    meta(name="twitter:title", content="")
+    meta(name="twitter:description", content="")
+    meta(name="twitter:domain", content="")
+
+  body
+
+    block content
+
+    footer
+
+    //Javascript
+    script(src="#{projectPath}/scripts/min/javascript-min.js")
+    block javascript
