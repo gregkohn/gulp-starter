@@ -1,12 +1,38 @@
+//- Independent files like this can access data from global.json and
+//- the corresponding local file, in this case index.jade.json.
+
 extends layouts/base
 include macros/helpers
 
 block content
+
+  //- Example usage of #{projectPath} (is it necessary?)
   img(src="#{projectPath}/images/gulp.png" width="50px" alt="gulp.js")
 
+  //- Link to second page
   div
     a(href="page.html") Second page
+
+  //- Example usages of the sprite macro
+  div
+    h1 Example sprite:
     +sprite("viget")
 
+  //- Example include of a file accessing global data
   div
+    h1 Example include:
     include shared/data-example.jade
+
+  //- Example loop accessing global data
+  div
+    h1 Example global data:
+    ul
+      - each person in people
+        li= person.name
+
+  //- Example loop accessing local data
+  div
+    h1 Example local data:
+    ul
+      - each link in links
+        li= link.title

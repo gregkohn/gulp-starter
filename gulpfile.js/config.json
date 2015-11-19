@@ -47,6 +47,8 @@
     "html": {
       "src": "html",
       "dest": "./",
+      "dataFolder": "data",
+      "globalData": "global.json",
       "extensions": ["jade","json"],
       "excludeFolders": ["layouts", "shared", "macros", "data"]
     },
@@ -67,7 +69,7 @@
       "src": "icons",
       "dest": "fonts",
       "sassDest": "generated",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+      "extensions": ["woff", "eot", "ttf", "svg"]
     },
 
     "svgSprite": {

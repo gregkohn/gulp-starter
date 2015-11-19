@@ -1,28 +1,4 @@
 {
-<<<<<<< HEAD
-  "title": "New Project"
-}
-=======
-
-  "socialLinks": [
-    {
-      "id": "twitter",
-      "title": "Twitter.",
-      "url": "https://twitter.com/viget"
-    },
-    {
-      "id": "facebook",
-      "title": "Facebook",
-      "url": "https://www.facebook.com/vigetlabs"
-    },
-    {
-      "id": "instagram",
-      "title": "Instagram",
-      "url": "https://instagram.com/viget"
-    }
-  ],
-
-
 
   "people": [
     {
@@ -33,9 +9,21 @@
       "name": "Michelle",
       "age": "23"
     }
+  ],
+
+  "animals": [
+    {
+      "name": "bear",
+      "type": "mammal"
+    },
+    {
+      "name": "penguin",
+      "type": "bird"
+    },
+    {
+      "name": "eagle",
+      "type": "bird"
+    }
   ]
 
-
-
 }
->>>>>>> Converted everything to jade, added support for single JSON file

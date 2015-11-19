@@ -1,13 +1,9 @@
+//- Shared files like this can only access data from global.json
+
 include ../macros/helpers
 
-- var icons = ["facebook", "twitter", "viget"]
+h2 This is a shared module!
+ul
+  - each animal in animals
+    li= animal.name
 
-//- each icon in socialLinks
-//- each icon in socialLinks
-//-   .icon
-//-     +sprite(icon.id)
-//-     h1 #{icon.title}
-
-each person in people
-  .person
-    h1= person.name

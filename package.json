@@ -64,11 +64,19 @@
     "karma-nyan-reporter": "0.2.4",
     "karma-sinon-chai": "1.2.0",
     "karma-webpack": "1.7.0",
+<<<<<<< HEAD
     "lodash": "4.6.1",
     "lolex": "1.4.0",
     "mocha": "2.4.5",
     "morgan": "1.7.0",
     "object-assign": "4.0.1",
+=======
+    "lodash": "^3.10.1",
+    "merge-stream": "^0.1.8",
+    "mocha": "^2.2.5",
+    "morgan": "^1.6.1",
+    "object-assign": "^3.0.0",
+>>>>>>> Adds support for globally and locally accessible JSON files
     "open": "0.0.5",
     "pretty-hrtime": "1.0.2",
     "require-dir": "0.3.0",
