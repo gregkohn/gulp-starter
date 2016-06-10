@@ -7,7 +7,7 @@ var path        = require('path')
 var fs          = require('fs')
 var jade        = require('gulp-jade')
 var data        = require('gulp-data')
-var assign      = require('lodash/object/assign')
+var assign      = require('lodash.assign')
 
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
